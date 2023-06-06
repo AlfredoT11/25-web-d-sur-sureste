@@ -106,6 +106,7 @@ class Pila{
             console.log(this.arreglo.pop());
         }*/
 
+        //Opción 2.
         while(this.arreglo.length != 0){
             console.log(this.arreglo.pop());
         }
@@ -131,3 +132,68 @@ pila1.printModify();
 
 pila1.printWithoutModify();
 
+// Alternativa para acceso de último elemento.
+let arreglo = [1, 2, 3, 4];
+console.log(arreglo.slice(-1)[0]);
+
+// Pila con referencias
+
+class Nodo{
+    constructor(valorNodo, nodoSiguiente){
+        this.valor = valorNodo;
+        this.siguiente = nodoSiguiente;
+    }
+}
+
+class PilaNodos{
+    constructor(){
+        this.tope = null;
+    }
+
+    push(nuevoValor){
+        if(this.tope == null){
+            let nuevoNodo = new Nodo(nuevoValor, null);
+            this.tope = nuevoNodo;
+        }else{
+            let nuevoNodo = new Nodo(nuevoValor, this.tope);
+            this.tope = nuevoNodo;
+        }
+    }
+
+    pop(){
+        if(this.tope == null){
+            console.log("La pila está vacía");
+            return null;
+        }
+        let valorDeNodoSacado = this.tope.valor;
+        this.tope = this.tope.siguiente;
+        return valorDeNodoSacado;
+    }
+
+    print(){
+        if(this.tope == null){
+            console.log("La pila está vacía");
+        }else{
+            console.log(this.tope.valor);
+        }
+    }
+}
+
+console.log("Pila con nodos");
+let pilaNodos = new PilaNodos();
+pilaNodos.push(10);
+pilaNodos.print();
+pilaNodos.push(5);
+pilaNodos.print();
+pilaNodos.push(4);
+pilaNodos.print();
+
+console.log(`El valor sacado es: ${pilaNodos.pop()}`);
+console.log(`El nuevo valor del tope es: `);
+pilaNodos.print()
+console.log(`El valor sacado es: ${pilaNodos.pop()}`);
+console.log(`El nuevo valor del tope es: `);
+pilaNodos.print()
+console.log(`El valor sacado es: ${pilaNodos.pop()}`);
+console.log(`El nuevo valor del tope es: `);
+pilaNodos.print()
