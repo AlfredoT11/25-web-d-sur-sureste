@@ -56,7 +56,7 @@ queue.enqueue('Carlos')
 queue.enqueue('Ediberto')
 
 // Pregunto si la cola esta vacia
-console.log(queue.isEmpty())
+console.log(queue.isEmpty()) // false
 
 queue.print()
 
