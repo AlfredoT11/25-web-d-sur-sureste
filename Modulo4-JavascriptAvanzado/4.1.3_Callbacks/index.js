@@ -15,7 +15,6 @@ function saludar2(nombre="") {
 
 function procesarEntradaUsuario(callback) {
     let nombre = prompt('Dime tu nombre')
-    setTimeout(callback(nombre), 5000)
     callback(nombre)
 }
 
