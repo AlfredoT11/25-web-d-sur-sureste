@@ -4,6 +4,13 @@ function mideTiempo(funcion) {
   funcion()
   console.timeEnd('---tiempo de ejecucion---')
 }
+function mideTiempo2(funcion) {
+  const inicio = Date.now()
+  funcion()
+  const fin = Date.now()
+  const tiempoEjecucion = fin - inicio;
+  return tiempoEjecucion
+}
 
 //Funcion sincrona
 function procesoSincrono() {
@@ -23,6 +30,7 @@ function procesoAsincrono() {
   console.log('Fin del proceso asincrono')
 }
 
-
 mideTiempo(procesoSincrono)
 mideTiempo(procesoAsincrono)
+console.log(`Tiempo: ${mideTiempo2(procesoSincrono)}`)
+console.log(`Tiempo: ${mideTiempo2(procesoAsincrono)}`)
