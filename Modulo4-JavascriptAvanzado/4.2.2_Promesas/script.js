@@ -69,7 +69,7 @@ let cronometroSimultaneo1 = new Promise((resolve, reject) => {
     let ms = 1000;
     setTimeout(() => {
         console.log(`Cronometro de ${ms} ms terminado`);
-        resolve('Cronometro simultáneo 1 OK');
+        reject('Cronometro simultáneo 1 OK');
     })
 });
 
@@ -96,3 +96,20 @@ let cronometrosTerminados = Promise.allSettled([cronometroSimultaneo1, cronometr
 cronometrosTerminados.then((valorPromesaCumplida) => {
     console.log(`Todos los cronometros se han terminado`);
 });
+
+// Promise.any() se cumple cuando AL MENOS UNA promesa se cumple
+//  y se rompe cuando TODAS las promesas se rompen.
+Promise.any([cronometroSimultaneo1, cronometroSimultaneo2])
+.then((valorPromesaCumplida) => {
+    console.log(`Al menos UNA promesa se cumplió`);
+})
+.catch((valorPromesaRechazada) => {
+    console.log(`Todas las promesas se rompieron. ):`);
+});
+
+// Promise.race() va a cumplirse o romperse con base en la primera promesa que termine y va a
+// tomar ese valor para ella.
+Promise.race([cronometroSimultaneo1, cronometroSimultaneo2])
+.then((valorPromesaCumplida) => {
+    console.log(`AL MENOS UNA promesa terminó (no me importa si se cumplió o es una promesa rota).`);
+}).catch(() => console.log('Error'));
