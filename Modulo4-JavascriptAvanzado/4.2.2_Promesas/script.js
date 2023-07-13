@@ -14,6 +14,7 @@ setTimeout(function mostrarMensajeCronometro(){
 }, 1000);
 */
 
+// Encadenamiento de promesas
 let cronometro1 = new Promise((resolve, reject) => {
     let promesaCumplida = true;
     setTimeout(() => {
@@ -63,4 +64,35 @@ cronometro1.then((valorPromesaCompletada) => {
     console.log(`El valor regresado de la promesa rota es: ${valorPromesaRota}`);
 });
 
-console.log('Mensaje después de la promesa');
+// Manejo de promesas simultáneas
+let cronometroSimultaneo1 = new Promise((resolve, reject) => {
+    let ms = 1000;
+    setTimeout(() => {
+        console.log(`Cronometro de ${ms} ms terminado`);
+        resolve('Cronometro simultáneo 1 OK');
+    })
+});
+
+let cronometroSimultaneo2 = new Promise((resolve, reject) => {
+    let ms = 3000;
+    setTimeout(() => {
+        console.log(`Cronometro de ${ms} ms terminado`);
+        reject('Cronometro simultáneo 1 OK');
+    })
+});
+
+// Promise.all() se cumple cuando todas las promesas se cumplen.
+//  y se rechaza con que UNA SOLA promesa se rechace-
+let cronometrosAceptados = Promise.all([cronometroSimultaneo1, cronometroSimultaneo2]);
+cronometrosAceptados.then((valorPromesaCumplida) => {
+    console.log(`TODOS los cronometros han cumplido su promesa`);
+})
+.catch((valorPromesaRechazada) => {
+    console.log(`Ocurrió un error`);
+});
+
+// Promise.allSettled() se cumple cuando todas las promesas terminan.
+let cronometrosTerminados = Promise.allSettled([cronometroSimultaneo1, cronometroSimultaneo2]);
+cronometrosTerminados.then((valorPromesaCumplida) => {
+    console.log(`Todos los cronometros se han terminado`);
+});
