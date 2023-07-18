@@ -32,5 +32,6 @@ function procesoAsincrono() {
 
 mideTiempo(procesoSincrono)
 mideTiempo(procesoAsincrono)
+
 console.log(`Tiempo: ${mideTiempo2(procesoSincrono)}`)
 console.log(`Tiempo: ${mideTiempo2(procesoAsincrono)}`)
