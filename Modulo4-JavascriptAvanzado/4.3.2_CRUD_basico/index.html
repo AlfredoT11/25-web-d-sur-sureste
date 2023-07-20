@@ -8,7 +8,18 @@
 <body>
     <h1>CRUD básico</h1>
 
-    <button onclick="crear()">Crear alumno nuevo</button>
+    <h2>Crear alumno nuevo</h2>
+    <form>
+        <label>Nombre: </label>
+        <input type="text" id="nombreAlumnoNuevo" /><br>
+        <label>Boleta: </label>
+        <input type="text" id="boletaAlumnoNuevo" /><br>
+        <label>Edad: </label>
+        <input type="number" id="edadAlumnoNuevo" /><br>
+        <label>Semestre: </label>
+        <input type="number" id="semestreAlumnoNuevo" /><br>
+        <button onclick="crear()">Crear alumno nuevo</button>
+    </form>
 
     <script src="script.js"></script>
 </body>

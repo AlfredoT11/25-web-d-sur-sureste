@@ -1,5 +1,11 @@
 function crear(){
-    crearAlumno('Juan', '3211590', 18, 5);
+
+    let nombre = document.getElementById('nombreAlumnoNuevo').value;
+    let boleta = document.getElementById('boletaAlumnoNuevo').value;
+    let edad = document.getElementById('edadAlumnoNuevo').value;
+    let semestre = document.getElementById('semestreAlumnoNuevo').value;
+
+    crearAlumno(nombre, boleta, edad, semestre);
 }
 
 function crearAlumno(nombre, boleta, edad, semestre){
