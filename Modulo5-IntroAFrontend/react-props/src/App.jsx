@@ -9,6 +9,7 @@ import tres from './assets/img/tres.jpg'
 import cuatro from './assets/img/cuatro.jpg'
 import cinco from './assets/img/cinco.jpg'
 import seis from './assets/img/seis.jpg'
+import Header from './components/Header.jsx'
 
 function App () {
 // Comentario de una sola lina
@@ -24,7 +25,7 @@ function App () {
       {/* Comentario de varias lineas
       en jsx
        */}
-
+      <Header title='Hola 25-web-d-sur-sureste' subtitle='Esto es React' buttonText='Click Me' />
       <section className='wave-contenedor website'>
         <img src={ilustracion1} alt='' />
         <div className='contenedor-textos-main'>
