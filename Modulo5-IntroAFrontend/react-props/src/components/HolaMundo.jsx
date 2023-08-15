@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types'
+
 const HolaMundoComponent = (props) => {
   console.log('props', props)
 
@@ -11,4 +13,8 @@ const HolaMundoComponent = (props) => {
   )
 }
 
+HolaMundoComponent.propTypes = {
+  name: PropTypes.string.isRequired,
+  edad: PropTypes.number.isRequired
+}
 export default HolaMundoComponent

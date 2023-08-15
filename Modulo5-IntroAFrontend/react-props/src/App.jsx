@@ -1,5 +1,5 @@
 import './App.css'
-import HolaMundo from './components/HolaMundo'
+// import HolaMundo from './components/HolaMundo'
 // Imagenes
 import ilustracion1 from './assets/img/ilustracion1.svg'
 import ilustracion from './assets/img/ilustracion.svg'
