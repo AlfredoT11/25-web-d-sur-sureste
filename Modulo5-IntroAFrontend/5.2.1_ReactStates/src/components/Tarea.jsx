@@ -1,7 +1,7 @@
-const Tarea = ({nombreTarea}) => {
+const Tarea = ({nombreTarea, eliminarTarea}) => {
     return (
         <>
-            <li>{nombreTarea} <button>Eliminar tarea</button></li>
+            <li>{nombreTarea} <button onClick={eliminarTarea}>Eliminar tarea</button></li>
         </>
     )
 }
