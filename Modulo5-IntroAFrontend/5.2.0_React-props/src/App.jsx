@@ -26,6 +26,7 @@ function App () {
       en jsx
        */}
       <Header title='Hola 25-web-d-sur-sureste' subtitle='Esto es React' buttonText='Click Me' />
+      {/* SECTION INICIO */}
       <section className='wave-contenedor website'>
         <img src={ilustracion1} alt='' />
         <div className='contenedor-textos-main'>
@@ -34,14 +35,14 @@ function App () {
           <a href='' className='cta'>Learn more</a>
         </div>
       </section>
-
+      {/* SECTION INFO */}
       <section className='info'>
         <div className='contenedor'>
           <h2 className='titulo left'>Junto podemos apoyar</h2>
           <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium ipsum voluptas unde dolor ad, mollitia similique, minus aperiam laboriosam harum repellat dignissimos dolorem cumque numquam aspernatur. Pariatur non eum velit.</p>
         </div>
       </section>
-
+      {/* SECTION CARDS */}
       <section className='cards contenedor'>
         <h2 className='titulo'>Our services</h2>
         <div className='content-cards'>
@@ -65,7 +66,7 @@ function App () {
           </article>
         </div>
       </section>
-
+      {/* GALERIA */}
       <section className='galeria'>
         <div className='contenedor'>
           <h2 className='titulo'>Our work</h2>
@@ -79,7 +80,7 @@ function App () {
           </article>
         </div>
       </section>
-
+      {/* INFO LAST */}
       <section className='info-last'>
 
         <div className='contenedor last-section'>
@@ -103,7 +104,7 @@ function App () {
           </svg>
         </div>
       </section>
-
+      {/* footer */}
       <footer id='contacto'>
         <div className='contenedor'>
           <h2 className='titulo'>Contact us</h2>
