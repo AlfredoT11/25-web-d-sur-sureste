@@ -21,6 +21,10 @@ const Home = () => {
     setSearch(event.target.value)
   }
 
+  const pokemonesFiltrados = pokemons.filter(pokemon => {
+    return pokemon.name.toLowerCase().includes(search.toLowerCase())
+  })
+
   return (
     <div className='container'>
       <h1>Home</h1>
@@ -35,7 +39,7 @@ const Home = () => {
       </form>
       <div className='row'>
         {
-          pokemons.map((pokemon) => {
+          pokemonesFiltrados.map((pokemon) => {
             return (
               <div className='col-6 col-md-4 col-lg-3' key={pokemon.name}>
                 <div className='card'>
